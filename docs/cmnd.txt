@@ -1,0 +1,3 @@
+gcc src/lexer.c driver/lexer_main.c -Iinclude -o build/lexer
+build\lexer
+

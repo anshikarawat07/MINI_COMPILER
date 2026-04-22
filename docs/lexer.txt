@@ -1,0 +1,190 @@
+🔹 Basic concept
+
+Lexical analysis is first phase of compiler
+
+It converts source code → tokens
+
+Tokens go to parser
+
+🔹 Type of lexer used
+
+Handwritten lexer in C
+
+Based on DFA (Deterministic Finite Automata)
+
+Not using Lex/Flex tool
+
+Line to say:
+
+We implemented handwritten DFA-based lexical analyzer.
+
+🔹 Why DFA used?
+
+Fast scanning
+
+No backtracking
+
+Reads input left to right
+
+Suitable for token recognition
+
+🔹 Why lexer needed?
+
+Parser cannot read raw characters
+
+Lexer converts program into tokens
+
+Makes syntax checking easy
+
+🔹 Why handwritten lexer?
+
+Easy to understand
+
+Full control on tokens
+
+Good for learning compiler design
+
+🔹 Tokens supported in our language
+
+Remember main ones:
+
+Keywords
+
+VAR, SET, IF, ELSE, WHILE, FOR, FUNC, PRINT, READ, CALL, RET, END
+
+Datatypes
+
+INT, BOOL, CHAR
+
+Operators
+
+/ %
+== != > < >= <=
+AND OR NOT
+
+Others
+
+identifier, number, char literal
+
+🔹 Main functions in lexer
+
+initLexer() → initialize file
+
+getNextToken() → returns next token
+
+checkKeyword() → checks keyword
+
+printAllTokens() → prints tokens
+
+🔹 Token structure contains
+
+token type
+
+lexeme
+
+line number
+
+Why line number?
+
+For error reporting.
+
+🔹 Why remove spaces & comments?
+
+Not needed for syntax
+
+Makes parsing easy
+
+🔹 Difference: keyword vs identifier
+
+Keyword → reserved word (VAR, IF)
+Identifier → user variable (x, sum)
+
+🔹 Can lexer detect syntax error?
+
+No
+Only token errors
+Syntax checked by parser
+
+🔹 DFA concept line (must remember)
+
+DFA reads input character by character and moves between states to recognize tokens.
+
+🔹 Why lexer faster than parser?
+
+Lexer only scans characters
+
+Parser checks grammar (complex)
+
+🔹 Single pass or multi pass?
+
+Single pass scanning.
+
+
+Step-by-step working:
+
+1️⃣ File Input
+Main function opens test.mll file and sends it to lexer.
+
+2️⃣ Initialization
+initLexer() stores file pointer so lexer can read characters.
+
+3️⃣ Read Character by Character
+getNextToken() reads file using fgetc() one character at a time.
+
+4️⃣ Skip Spaces & Comments
+
+Ignores spaces and new lines
+
+Ignores comments starting with #
+
+5️⃣ Identify Tokens
+Lexer checks character:
+
+If alphabet → keyword or identifier
+
+If digit → number
+
+If 'A' → character literal
+
+If + - * etc → operator
+
+If ( ) : , → symbols
+
+6️⃣ Keyword Check
+checkKeyword() checks if word is keyword like VAR, IF, PRINT etc.
+
+7️⃣ Create Token
+Lexer stores:
+
+token type
+
+lexeme
+
+line number
+
+8️⃣ Print Tokens
+printAllTokens() prints all tokens until EOF.
+
+9️⃣ End of File
+When file ends → TOK_EOF returned → lexer stops.
+
+
+
+
+. Difference: DFA vs NFA 
+Answer:
+DFA → deterministic, fast, no backtracking
+NFA → complex, may need backtracking
+
+So DFA used in lexical analysis.
+
+Why lexer first phase?
+
+Answer:
+Parser cannot understand raw characters.
+Lexer converts program into tokens for parser.
+
+Why enum used for tokens?
+
+Answer:
+Enum gives unique integer value to each token and makes comparison faster.

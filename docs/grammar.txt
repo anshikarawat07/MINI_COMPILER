@@ -1,0 +1,231 @@
+## MINILEARNLANG – LANGUAGE DOCUMENTATION
+
+1. INTRODUCTION
+   MiniLearnLang is a simple custom programming language created using the C programming language.
+   It is designed to understand how a compiler works step by step.
+
+This language allows users to write simple programs using variables, conditions, loops, functions, and input/output statements.
+Programs are written in a file with extension .mll and executed using our compiler.
+
+The main purpose of this language is educational. It helps students understand compiler design concepts such as lexical analysis, parsing, semantic checking, and execution.
+
+
+2. HOW THE LANGUAGE WORKS
+
+When a user writes a program in MiniLearnLang, it goes through different phases:
+
+Step 1: User writes program in test.mll file
+Step 2: Lexer reads program and converts it into tokens
+Step 3: Parser checks syntax rules
+Step 4: Semantic analyzer checks logical meaning
+Step 5: Interpreter executes program
+Step 6: Output is displayed on screen
+
+
+3. VARIABLE DECLARATION (VAR SYNTAX)
+
+Variables are declared using the keyword VAR.
+
+Syntax:
+VAR variable_name : datatype
+
+Example:
+VAR x : INT
+VAR flag : BOOL
+VAR ch : CHAR
+
+A variable must be declared before using it in the program.
+
+
+4. DATA TYPES
+
+MiniLearnLang supports three data types:
+
+INT   → Stores integer values
+BOOL  → Stores true or false
+CHAR  → Stores single character
+
+Examples:
+VAR x : INT
+VAR flag : BOOL
+VAR ch : CHAR
+
+
+5. ASSIGNMENT STATEMENT
+
+Assignment is done using SET keyword.
+
+Syntax:
+SET variable = value
+
+Example:
+SET x = 10
+SET sum = x + 5
+SET flag = true
+
+
+6. ARITHMETIC OPERATIONS
+
+MiniLearnLang supports basic arithmetic operations:
+
+* Addition
+
+- Subtraction
+
+* Multiplication
+  /  Division
+  %  Modulus
+
+Example:
+SET x = 10
+SET y = 5
+SET sum = x + y
+SET mul = x * y
+
+
+7. INPUT STATEMENT
+
+Used to take input from user.
+
+Syntax:
+READ variable
+
+Example:
+READ x
+
+User enters value from keyboard.
+
+
+8. OUTPUT STATEMENT (PRINT)
+
+Used to display output on screen.
+
+Syntax:
+PRINT expression
+
+Example:
+PRINT x
+PRINT 10
+PRINT x + y
+
+
+
+9. CONDITIONAL STATEMENT (IF–ELSE)
+
+Used to check conditions.
+
+Syntax:
+IF condition
+statements
+ELSE
+statements
+END
+
+Example:
+IF x > 10
+PRINT x
+ELSE
+PRINT 0
+END
+
+
+10. WHILE LOOP
+
+Repeats statements while condition is true.
+
+Syntax:
+WHILE condition
+statements
+END
+
+Example:
+WHILE x < 5
+PRINT x
+SET x = x + 1
+END
+
+
+
+11. FOR LOOP
+
+Used for fixed number of iterations.
+
+Syntax:
+FOR i FROM start TO end STEP value
+statements
+END
+
+Example:
+FOR i FROM 1 TO 5 STEP 1
+PRINT i
+END
+
+
+12. FUNCTIONS
+
+Functions are defined using FUNC keyword.
+
+Syntax:
+FUNC function_name
+statements
+RET value
+END
+
+Example:
+FUNC add
+VAR x : INT
+SET x = 10
+RET x
+END
+
+
+13. FUNCTION CALL
+
+Syntax:
+CALL function_name
+
+Example:
+CALL add
+
+
+
+14. BOOLEAN OPERATIONS
+
+AND  → Logical AND
+OR   → Logical OR
+NOT  → Logical NOT
+
+Example:
+IF x > 5 AND y < 10
+PRINT x
+END
+
+
+15. BREAK AND CONTINUE
+
+BREAK     → Exit loop
+CONTINUE  → Skip current iteration
+
+Used inside loops.
+
+
+16. COMMENTS
+
+Comments start with # symbol.
+Compiler ignores comments.
+
+Example:
+
+# This is comment
+
+VAR x : INT
+
+
+17. RULES OF LANGUAGE
+
+Keywords must be written in capital letters
+Variable must be declared before use
+Each block must end with END
+Only supported datatypes allowed
+Comments start with #
+Syntax must follow defined grammar

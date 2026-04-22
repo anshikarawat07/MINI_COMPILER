@@ -1,0 +1,8 @@
+FUNC main() :
+VAR a : INT
+IF 1 :
+SET a 10
+END
+PRINT a
+RET 0
+END
